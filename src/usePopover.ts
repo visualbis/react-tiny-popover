@@ -65,9 +65,12 @@ export const usePopover = ({
         const left = parentRect.left + inputLeft;
         const top = parentRect.top + inputTop;
 
-        popoverRef.current.style.transform = `translate(${left - scoutRect.left}px, ${
-          top - scoutRect.top
-        }px)`;
+        // popoverRef.current.style.transform = `translate(${left - scoutRect.left}px, ${
+        //   top - scoutRect.top
+        // }px)`;
+
+        popoverRef.current.style.left = `${left - scoutRect.left}px`;
+        popoverRef.current.style.top = `${top - scoutRect.top}px`;
 
         onPositionPopover({
           childRect,
@@ -126,9 +129,12 @@ export const usePopover = ({
         finalLeft = nudgedLeft;
       }
 
-      popoverRef.current.style.transform = `translate(${finalLeft - scoutRect.left}px, ${
-        finalTop - scoutRect.top
-      }px)`;
+      // popoverRef.current.style.transform = `translate(${finalLeft - scoutRect.left}px, ${
+      //   finalTop - scoutRect.top
+      // }px)`;
+
+      popoverRef.current.style.left = `${finalLeft - scoutRect.left}px`;
+      popoverRef.current.style.top = `${finalTop - scoutRect.top}px`;
 
       onPositionPopover({
         childRect,
