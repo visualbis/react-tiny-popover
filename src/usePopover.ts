@@ -35,13 +35,13 @@ export const usePopover = ({
   const positionPopover = useCallback<PositionPopover>(
     ({
       positionIndex = 0,
-      parentRect = parentElement.getBoundingClientRect(),
+      parentRect = parentElement?.getBoundingClientRect(),
       childRect = childRef?.current?.getBoundingClientRect(),
       scoutRect = scoutRef?.current?.getBoundingClientRect(),
-      popoverRect = popoverRef.current.getBoundingClientRect(),
+      popoverRect = popoverRef?.current?.getBoundingClientRect(),
       boundaryRect = boundaryElement === parentElement
         ? parentRect
-        : boundaryElement.getBoundingClientRect(),
+        : boundaryElement?.getBoundingClientRect(),
     } = {}) => {
       if (!childRect || !parentRect) {
         return;
