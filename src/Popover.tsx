@@ -192,9 +192,11 @@ const PopoverInternal = forwardRef<HTMLElement, PopoverProps>(
 
     useEffect(() => {
       window.addEventListener('click', handleOnClickOutside);
+      window.addEventListener('contextmenu', handleOnClickOutside);
       window.addEventListener('resize', handleWindowResize);
       return () => {
         window.removeEventListener('click', handleOnClickOutside);
+        window.removeEventListener('contextmenu', handleOnClickOutside);
         window.removeEventListener('resize', handleWindowResize);
       };
     }, [handleOnClickOutside, handleWindowResize]);
